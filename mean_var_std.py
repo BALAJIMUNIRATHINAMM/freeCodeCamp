@@ -1,10 +1,10 @@
 import numpy as np
 
-def calculate(lst):
-    if len(lst) != 9:
+def calculate(numbers):
+    if len(numbers) != 9:
         raise ValueError("List must contain nine numbers.")
-    
-    matrix = np.array(lst).reshape(3, 3)
+
+    matrix = np.array(numbers).reshape(3, 3)
 
     calculations = {
         'mean': [matrix.mean(axis=0).tolist(), matrix.mean(axis=1).tolist(), matrix.mean().tolist()],
@@ -14,5 +14,5 @@ def calculate(lst):
         'min': [matrix.min(axis=0).tolist(), matrix.min(axis=1).tolist(), matrix.min().tolist()],
         'sum': [matrix.sum(axis=0).tolist(), matrix.sum(axis=1).tolist(), matrix.sum().tolist()]
     }
-    
+
     return calculations
